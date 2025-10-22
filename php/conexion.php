@@ -5,7 +5,7 @@
     $passdb = "";
     $namedb = "proyectfinal";
 
-    $conexion = new msqli()
+    $conexion = new msqli($serverdb, $userdb, $passdb, $namedb)
 
 ?>
 

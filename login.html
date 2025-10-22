@@ -11,13 +11,25 @@
 
     <h1 class="pagetitle">PERSONAL EVENT CREATOR</h1>
      
-    <form action="" class="login" method="post">
+    <form action="php/login.php" class="login" method="post">
         <div class="boxlogin">
+
             <h2 class="title">Sign In</h2>
-            <input type="gmail" placeholder="Gmail" name="gmail">
-            <input type="text" placeholder="Password" name="pass">
-            <button type="submit" class="buttonlogin">Login</button>
-            <p>Don't have an account?  <a href="register.html">Register</a></p>
+
+            <div class="input-container">
+                <img src="img/email-icon.png" alt="Gmail">
+                <input type="email" placeholder="Gmail" name="gmail" id="gmail">
+            </div>
+            <div class="input-container">
+                <img src="img/password-icon.png" alt="Password">
+                <input type="password" placeholder="Password" name="pass" id="pass">
+            </div>
+            <div class="button-container">
+                <button type="submit" class="buttonlogin">Login</button>
+            </div>
+            <div class="register-container">
+                <p>Don't have an account?  <a href="register.html">Register</a></p>
+            </div>
         </div>
     </form>
     
