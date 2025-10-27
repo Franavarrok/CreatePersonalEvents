@@ -1,12 +1,16 @@
 <?php
 
-    $serverdb = "localhost";
-    $userdb = "root";
-    $passdb = "";
-    $namedb = "proyectfinal";
+    $dbserver = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "createpersonalevent";
 
-    $conexion = new msqli($serverdb, $userdb, $passdb, $namedb)
+    $link = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
+    if(!$link){
+        die ("Error connecting to database" . $link -> connect_error);
+    }
+    
 ?>
 
 

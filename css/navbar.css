@@ -1,0 +1,62 @@
+*{
+    font-family: 'Mate', serif;
+}
+
+body{
+    background-color: black;
+}
+
+.navbar{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #AB00CD;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar .title{
+    font-size: 30px;
+    background-color: white;
+    color: #AB00CD;
+    padding-left: 40px;
+}
+
+.navbar .links a{
+    font-size: 20px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    text-shadow: 0px 0px 5px #AB00CD;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: back-ground 0.3s, color 0.3s;
+}
+
+.navbar .links a:hover{
+    color: #AB00CD;
+}
+
+.navbar .button-container .buttonlogout{
+    background-color: #AB00CD;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #AB00CD;
+    border-radius: 20px;
+    padding: 15px;
+    margin-right: 50px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: back-ground 0.3s, color 0.3s;
+}
+
+.navbar .button-container .buttonlogout:hover{
+    background-color: white;
+    color: #AB00CD;
+    border: 3px solid #AB00CD;
+}

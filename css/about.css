@@ -1,0 +1,47 @@
+*{
+    font-family: 'Mate', serif;
+}
+
+.first-box{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #ab00cd6b;
+    color: white;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 50px;
+    width: 60%;
+}
+
+.first-box .text-container .first{
+    text-align: center;
+}
+
+.second-box{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #ab00cd6b;
+    color: white;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+    width: 60%;
+}
+
+.second-box .text-container .second{
+    text-align: center;
+}
+
+footer{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+    text-shadow: 0px 0px 20px #AB00CD;
+}
+
+footer:hover{
+    color: #AB00CD;
+}
