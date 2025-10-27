@@ -1,5 +1,5 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Mate', serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -19,12 +19,12 @@ body{
     font-size: 40px;
     display: flex;
     padding: 40px;
-    text-shadow: 0px 0px 60px blueviolet;
+    text-shadow: 0px 0px 60px #AB00CD;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .titlepage:hover{
-    color: blueviolet;
+    color: #AB00CD;
 }
 
 .boxregister{
@@ -35,27 +35,27 @@ body{
     padding: 40px;
     margin: 40px;
     border-radius: 15px;
-    box-shadow: 0px 0px 30px blueviolet;
+    box-shadow: 0px 0px 30px #AB00CD;
     text-align: center;
-    border: 2px solid blueviolet;
+    border: 2px solid #AB00CD;
 
     .title{
         font-size: 40px;
         font-weight: bold;
-        text-shadow: 0px 2px 6px blueviolet;
+        text-shadow: 0px 2px 6px #AB00CD;
     }
 
     a{
         text-decoration: none;
-        color: blueviolet;
-        text-shadow: 0px 0px 10px blueviolet;
+        color: #AB00CD;
+        text-shadow: 0px 0px 10px #AB00CD;
     }
 
     input, button{
         font-size: 20px;
         width: 100%;
         padding: 8px;
-        border: 2px solid blueviolet;
+        border: 2px solid #AB00CD;
         border-radius: 5px;
     }
 
@@ -79,7 +79,7 @@ body{
     }
 
     .buttonregister{
-        background-color: blueviolet;
+        background-color: #AB00CD;
         color: white;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
@@ -87,7 +87,7 @@ body{
 
     .buttonregister:hover{
         background-color: white;
-        color: blueviolet;
+        color: #AB00CD;
     }
     
 }

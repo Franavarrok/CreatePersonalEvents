@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/create.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2 class="title">EVENTS</h2>
+        <div class="links">
+            <a href="create.html">CREATE</a>
+            <a href="events.html">EVENTS</a>
+            <a href="about.html">ABOUT</a>
+        </div>
+        <div class="button-container">
+            <button class="buttonlogout">LOG OUT</button>
+        </div>
+    </div>
+
+    <div class="first-box">
+        <div class="text-container">
+            <h2 class="first">
+                Do you need to create an event?
+            </h2>
+            <h3 class="second">
+                Fill in all fields to save the data.
+            </h3>
+        </div>
+    </div>
+
+    <form action="php/create.php" method="post">
+        <div class="event-box">
+            <input type="text" placeholder="Title" name="title" id="title" required>
+            <input type="varchar" placeholder="Description" name="description" id="description" required>
+            <input type="date" placeholder="Date" name="date" id="date" required>
+        </div>
+        <div class="button-save">
+            <button type="submit" name="submit" class="buttonsave">SAVE</button>
+        </div>
+    </form>
+
+
+    
+</body>
+</html>
