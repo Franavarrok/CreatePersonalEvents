@@ -1,5 +1,5 @@
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Mate', serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -14,46 +14,80 @@ body{
     margin: 0;
 }
 
+.titlepage{
+    color: white;
+    font-size: 40px;
+    display: flex;
+    padding: 40px;
+    text-shadow: 0px 0px 60px #AB00CD;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.titlepage:hover{
+    color: #AB00CD;
+}
+
 .boxregister{
     background-color: white;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 40px;
+    margin: 40px;
     border-radius: 15px;
-    box-shadow: 0px 0px 30px blueviolet;
+    box-shadow: 0px 0px 30px #AB00CD;
     text-align: center;
-    border: 2px solid blueviolet;
+    border: 2px solid #AB00CD;
 
     .title{
         font-size: 40px;
         font-weight: bold;
-        text-shadow: 0px 2px 6px blueviolet;
+        text-shadow: 0px 2px 6px #AB00CD;
     }
 
     a{
         text-decoration: none;
-        color: blueviolet;
-        text-shadow: 0px 0px 10px blueviolet;
+        color: #AB00CD;
+        text-shadow: 0px 0px 10px #AB00CD;
     }
 
     input, button{
         font-size: 20px;
         width: 100%;
         padding: 8px;
-        border: 2px solid blueviolet;
+        border: 2px solid #AB00CD;
         border-radius: 5px;
     }
 
+    .input-container{
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+
+    .input-container img{
+        position: absolute;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .input-container input{
+        padding-left: 40px;
+        height: 35px;
+        font-size: 16px;
+    }
+
     .buttonregister{
-        background-color: white;
-        color: black;
+        background-color: #AB00CD;
+        color: white;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
     }
 
     .buttonregister:hover{
-        background-color: blueviolet;
+        background-color: white;
+        color: #AB00CD;
     }
     
 }
