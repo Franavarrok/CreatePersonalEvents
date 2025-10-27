@@ -9,15 +9,33 @@
 </head>
 <body>
 
-    <form action="" class="register" method="post">
-        <div class="boxregister">
+    <h1 class="titlepage">FILL IN THE FIELDS TO REGISTER</h1>
+
+    <form action="php/register.php" class="register" method="post">
+        <div class="boxregister"> 
             <h2 class="title">Register</h2>
-            <input type="text" placeholder="User" name="user">
-            <input type="number" placeholder="Document" name="document">
-            <input type="gmail" placeholder="Gmail" name="gmail">
-            <input type="text" placeholder="Password" name="pass">
-            <button type="submit" class="buttonregister">Register</button>
-            <p>Already have an account? <a href="login.html">Return</a></p>
+            <div class="input-container">
+                <img src="img/person-icon.png" alt="User-Icon">
+                <input type="text" placeholder="User" name="user" id="user">
+            </div>
+            <div class="input-container">
+                <img src="img/document-icon.png" alt="Document-Icon">
+                <input type="number" placeholder="Document" name="document" id="document">
+            </div>
+            <div class="input-container">
+                <img src="img/email-icon.png" alt="Gmail-Icon">
+                <input type="email" placeholder="Gmail" name="email" id="email">
+            </div>
+            <div class="input-container">
+                <img src="img/password-icon.png" alt="Password-Icon">
+                <input type="password" placeholder="Password" name="pass" id="pass">
+            </div>
+            <div class="button-container">
+                <button type="submit" class="buttonregister">Register</button>
+            </div>
+            <div class="login-container">
+                <p>Already have an account? <a href="login.html">Return</a></p>
+            </div>
         </div>
     </form>
     

@@ -14,12 +14,26 @@ body{
     margin: 0;
 }
 
+.titlepage{
+    color: white;
+    font-size: 40px;
+    display: flex;
+    padding: 40px;
+    text-shadow: 0px 0px 60px blueviolet;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.titlepage:hover{
+    color: blueviolet;
+}
+
 .boxregister{
     background-color: white;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 40px;
+    margin: 40px;
     border-radius: 15px;
     box-shadow: 0px 0px 30px blueviolet;
     text-align: center;
@@ -45,15 +59,35 @@ body{
         border-radius: 5px;
     }
 
+    .input-container{
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
+
+    .input-container img{
+        position: absolute;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .input-container input{
+        padding-left: 40px;
+        height: 35px;
+        font-size: 16px;
+    }
+
     .buttonregister{
-        background-color: white;
-        color: black;
+        background-color: blueviolet;
+        color: white;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
     }
 
     .buttonregister:hover{
-        background-color: blueviolet;
+        background-color: white;
+        color: blueviolet;
     }
     
 }
