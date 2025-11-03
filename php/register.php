@@ -12,10 +12,7 @@
         $sql -> bind_param('siss', $user, $document, $email, $pass);
 
         if($sql->execute()){
-            echo "<script>
-                alert('You registered successfully');
-                windows.location.href = '../login.html';
-                </script>";
+           header(Location: '../login.html');
         } else{
             echo "Error: " . $sql->error;
         }
