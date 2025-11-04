@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 
+    <!-- Vinculamos todos los archivos necesarios. -->
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
 
+    <!-- Titulo centrado que estara a la izquierda del registro. -->
     <h1 class="titlepage">FILL IN THE FIELDS TO REGISTER</h1>
-
+    <!-- Formulario para realizar un registro de usuario a traves el metodo POST. -->
     <form action="php/registervalidate.php" class="register" method="post">
+        <!-- Box principal, dividido por otros divs que contienen todos los titulos, inputs, imagenes y botones. -->
         <div class="boxregister"> 
             <h2 class="title">Register</h2>
             <div class="input-container">
@@ -33,6 +36,7 @@
             <div class="button-container">
                 <button type="submit" class="buttonregister" name="submit">Register</button>
             </div>
+            <!-- Hipervinculo hacia el archivo login.php, en el caso de ya tener una cuenta. -->
             <div class="login-container">
                 <p>Already have an account? <a href="login.php">Return</a></p>
             </div>

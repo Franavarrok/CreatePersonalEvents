@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create</title>
 
+    <!-- Vinculamos todos los archivos necesarios. -->
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/create.css">
 </head>
 <body>
 
+    <!-- Incluimos nuestro archivo navbar.php, que contiene toda la estructura del nav en HTML. -->
     <?php include 'php/navbar.php'; ?>
 
     <div class="first-box">
