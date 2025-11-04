@@ -8,7 +8,7 @@
     $sql = "SELECT * FROM users WHERE email = '$email' AND pass = '$pass'";
     $result = $link -> query($sql);
 
-    if($result -> num_rows = 0){
+    if($result -> num_rows > 0){
         session_start();
         $_SESSION['user'] = $email;
         header("Location: ../index.php");
