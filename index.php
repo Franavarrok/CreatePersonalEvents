@@ -10,7 +10,10 @@
 </head>
 <body>
     
-    <?php include 'php/navbar.php'; ?>
+    <?php 
+        include 'php/navbar.php';
+        require_once 'php/sessionvalidate.php' 
+    ?>
 
     <img src="img/main-logo.png" alt="Main-Logo">
 
