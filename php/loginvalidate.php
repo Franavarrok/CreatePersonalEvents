@@ -5,7 +5,7 @@
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    $sql = "SELECT * FROM users WHERE '$email' AND pass = '$pass' AND STATUS = 1";
+    $sql = "SELECT * FROM users WHERE email = '$email' AND pass = '$pass'";
     $result = $link -> query($sql);
 
     if($result -> num_rows = 0){
