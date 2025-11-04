@@ -5,22 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
 
-    <link rel="stylesheet" href="css/event.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="index.html"><h2 class="title">EVENTS</h2></a>
-        <div class="links">
-            <a href="create.html">CREATE</a>
-            <a href="event.html">EVENTS</a>
-            <a href="about.html">ABOUT</a>
-        </div>
-        <div class="button-container">
-            <button class="buttonlogout">LOG OUT</button>
-        </div>
-    </div>
+    <?php include 'php/navbar.php'; ?>
 
     <div class="first-container">
         <h2 class="title-event">My Events</h2>

@@ -10,17 +10,7 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <a href="index.html"><h2 class="title">EVENTS</h2></a>
-        <div class="links">
-            <a href="create.html">CREATE</a>
-            <a href="event.html">EVENTS</a>
-            <a href="about.html">ABOUT</a>
-        </div>
-        <div class="button-container">
-            <button class="buttonlogout">LOG OUT</button>
-        </div>
-    </div>
+    <?php include 'php/navbar.php'; ?>
 
     <div class="first-box">
         <div class="text-container">

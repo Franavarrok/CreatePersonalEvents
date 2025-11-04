@@ -11,7 +11,7 @@
 
     <h1 class="titlepage">FILL IN THE FIELDS TO REGISTER</h1>
 
-    <form action="php/register.php" class="register" method="post">
+    <form action="php/registervalidate.php" class="register" method="post">
         <div class="boxregister"> 
             <h2 class="title">Register</h2>
             <div class="input-container">
@@ -34,7 +34,7 @@
                 <button type="submit" class="buttonregister" name="submit">Register</button>
             </div>
             <div class="login-container">
-                <p>Already have an account? <a href="login.html">Return</a></p>
+                <p>Already have an account? <a href="login.php">Return</a></p>
             </div>
         </div>
     </form>

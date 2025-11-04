@@ -1,0 +1,24 @@
+img{
+    color: #AB00CD;
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    margin: auto;
+}
+
+footer{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 0px 0px 20px #AB00CD;
+}
+
+footer:hover{
+    color: #AB00CD;
+}
+

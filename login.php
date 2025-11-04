@@ -11,7 +11,7 @@
 
     <h1 class="titlepage">PERSONAL EVENT CREATOR</h1>
      
-    <form action="php/login.php" class="login" method="post">
+    <form action="php/loginvalidate.php" class="login" method="post">
         <div class="boxlogin">
 
             <h2 class="title">Sign In</h2>
@@ -28,7 +28,7 @@
                 <button type="submit" class="buttonlogin">Login</button>
             </div>
             <div class="register-container">
-                <p>Don't have an account?  <a href="register.html">Register</a></p>
+                <p>Don't have an account?  <a href="register.php">Register</a></p>
             </div>
         </div>
     </form>
