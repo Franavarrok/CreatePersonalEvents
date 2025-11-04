@@ -30,8 +30,6 @@
             <input type="text" placeholder="Title" name="title" id="title" required>
             <input type="varchar" placeholder="Description" class="description" name="description" id="description" required>
             <input type="date" placeholder="Date" name="date" id="date" required>
-        </div>
-        <div class="button-save">
             <button type="submit" name="submit" class="buttonsave">SAVE</button>
         </div>
     </form>

@@ -21,11 +21,11 @@
 
             <div class="input-container">
                 <img src="img/email-icon.png" alt="Gmail-Icon">
-                <input type="email" placeholder="Gmail" name="email" id="email">
+                <input type="email" placeholder="Gmail" name="email" id="email" required> 
             </div>
             <div class="input-container">
                 <img src="img/password-icon.png" alt="Password-Icon">
-                <input type="password" placeholder="Password" name="pass" id="pass">
+                <input type="password" placeholder="Password" name="pass" id="pass" required>
             </div>
             <div class="button-container">
                 <button type="submit" class="buttonlogin">Login</button>
