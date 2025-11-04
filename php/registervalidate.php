@@ -12,7 +12,7 @@
         $sql -> bind_param('siss', $user, $document, $email, $pass);
 
         if($sql->execute()){
-           header(Location: '../login.html');
+           header("Location: ../login.php");
         } else{
             echo "Error: " . $sql->error;
         }
