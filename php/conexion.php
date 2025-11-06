@@ -10,7 +10,7 @@
     $link = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
     //Condicion simple que indica que si la conexion es diferente tira un mensaje de error.
-    if(!$link){
+    if($link-> connect_error) {
         die ("Error connecting to database" . $link -> connect_error);
     }
     
