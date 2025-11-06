@@ -36,7 +36,7 @@
         $stmt_doc -> store_result();
 
         if($stmt_doc -> num_rows > 0){
-            $_SESSION['registro_error'] = "The document **" . htmlspecialchars($document) . "** it is already exists.";
+            $_SESSION['registro_error'] = "The document " . htmlspecialchars($document) . " it is already exists.";
             header("Location: ../register.php");
             $stmt_doc -> close(); 
             $link -> close();
