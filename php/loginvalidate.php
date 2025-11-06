@@ -1,20 +1,61 @@
 <?php 
 
+    session_start();
     require_once 'conexion.php';
 
-    $email = $_POST['email'];
-    $pass = $_POST['pass'];
+    if(isset($_POST['submit_login'])){
+        $emailadmited = $_POST['email'];
+        $passadmited = $_POST['pass'];
 
-    $sql = "SELECT * FROM users WHERE email = '$email' AND pass = '$pass'";
-    $result = $link -> query($sql);
+        $stmt = $link -> prepare ("SELECT id, pass FROM users WHERE email = ? LIMIT 1");
 
-    if($result -> num_rows > 0){
-        session_start();
-        $_SESSION['user'] = $email;
-        header("Location: ../index.php");
+        if(!$stmt){
+            $_SESSION['login_error'] = "Internal system error. Please try again later.";
+            header("Location: ../login.php");
+            exit();
+        }
 
-    }else{
-        header("Location: ../login.php");
+        $stmt -> bind_param('s', $emailadmited);
+        $stmt -> execute();
+        
+        $result = $stmt -> get_result();
+        $user = $result -> fetch_assoc();
+
+        $error = "Incorrect email address or password.";
+
+        if(!$user){
+            $_SESSION['login_error'] = $error;
+
+            $stmt -> close();
+            $link -> close();
+            header("Location: ../login.php");
+            exit();
+        }
+
+        if(password_verify($passadmited, $user['pass'])){
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_email'] = $emailadmited;
+
+            $stmt -> close();
+            $link -> close();
+            header("Location: ../index.php");
+            exit();
+
+        }else{
+            $_SESSION['login_error'] = $error;
+
+            $stmt -> close();
+            $link -> close();
+            header("Location: ../login.php");
+            exit();
+        }
+
+        $stmt -> close();
+        $link -> close();
+
     }
+
+    header("Location: ../login.php");
+    exit();
 
 ?>
