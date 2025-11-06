@@ -14,18 +14,6 @@ body{
     margin: 0;
 }
 
-.erroralert{
-    background-color: white;
-    color: #AB00CD;
-    text-shadow: 0px 0px 5px #AB00CD;
-    border: 1px solid #AB00CD;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px auto;
-    width: 80%;
-    max-width: 250px;
-}
-
 .titlepage{
     color: white;
     font-size: 40px;
@@ -50,6 +38,18 @@ body{
     box-shadow: 0px 0px 30px #AB00CD;
     text-align: center;
     border: 2px solid #AB00CD;
+
+    .erroralert{
+    background-color: white;
+    color: #AB00CD;
+    text-shadow: 0px 0px 5px #AB00CD;
+    border: 1px solid #AB00CD;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px auto;
+    width: 80%;
+    max-width: 250px;
+    }
 
     .title{
         font-size: 40px;

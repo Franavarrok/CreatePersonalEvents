@@ -21,7 +21,7 @@
 
         //Condicion que nos redigira a nuestro archivo registro.php si colocan un correo existente.
         if($stmt_email -> num_rows > 0){
-            $_SESSION['registro_error'] = "The email **" . htmlspecialchars($email) . "** it is already registered.";
+            $_SESSION['registro_error'] = "The email " . htmlspecialchars($email) . " it is already registered.";
             header("Location: ../register.php");
             $stmt_email -> close();
             $link -> close(); 

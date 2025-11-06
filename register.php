@@ -12,21 +12,6 @@
 </head>
 <body>
 
-    <?php
-        // Verifica si existe un mensaje de error en la sesión.
-        if (isset($_SESSION['registro_error'])):
-    ?>
-
-    <div class="erroralert">
-        <p><?php echo $_SESSION['registro_error']; ?></p>
-    </div>
-
-    <?php
-        // Una vez mostrado el error, lo borramos de la sesión para que no se muestre al recargar.
-            unset($_SESSION['registro_error']);
-        endif;
-    ?>
-
     <!-- Titulo centrado que estara a la izquierda del registro. -->
     <h1 class="titlepage">FILL IN THE FIELDS TO REGISTER</h1>
     <!-- Formulario para realizar un registro de usuario a traves el metodo POST. -->
@@ -34,6 +19,22 @@
         <!-- Box principal, dividido por otros divs que contienen todos los titulos, inputs, imagenes y botones. -->
         <div class="boxregister"> 
             <h2 class="title">Register</h2>
+
+            <?php
+            // Verifica si existe un mensaje de error en la sesión.
+            if (isset($_SESSION['registro_error'])):
+            ?>
+
+            <div class="erroralert">
+                <p><?php echo $_SESSION['registro_error']; ?></p>
+            </div>
+
+            <?php
+            // Una vez mostrado el error, lo borramos de la sesión para que no se muestre al recargar.
+            unset($_SESSION['registro_error']);
+            endif;
+            ?>
+            
             <div class="input-container">
                 <img src="img/person-icon.png" alt="User-Icon">
                 <input type="text" placeholder="User" name="user" id="user" required>
