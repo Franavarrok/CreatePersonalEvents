@@ -41,20 +41,7 @@
                     <strong>Date:</strong> <?= htmlspecialchars($row['date']) ?>
                 </div>
             </div>
-
-            <div class="button-type">
-                <div>
-                    <button class="button-update">UPDATE</button>
-                </div>
-                <div>
-                    <button class="button-delete">DELETE</button>
-                </div>
-            </div>
-        <?php endwhile; ?>
-    <?php else: ?>
-        <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
-    <?php endif; ?>
-</div>
+                
 
 </body>
 </html>
