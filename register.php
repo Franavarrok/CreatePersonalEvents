@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +11,21 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
+
+    <?php
+        // Verifica si existe un mensaje de error en la sesión.
+        if (isset($_SESSION['registro_error'])):
+    ?>
+
+    <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; margin: 10px auto; width: 80%; max-width: 400px; border-radius: 5px; text-align: center;">
+        <p><?php echo $_SESSION['registro_error']; ?></p>
+    </div>
+
+    <?php
+        // Una vez mostrado el error, lo borramos de la sesión para que no se muestre al recargar.
+            unset($_SESSION['registro_error']);
+        endif;
+    ?>
 
     <!-- Titulo centrado que estara a la izquierda del registro. -->
     <h1 class="titlepage">FILL IN THE FIELDS TO REGISTER</h1>
