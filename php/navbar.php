@@ -4,9 +4,13 @@
         <a href="create.php">CREATE</a>
         <a href="event.php">EVENTS</a>
         <a href="about.php">ABOUT</a>
-    </div>
+    </div> 
+
     <div class="button-container">
-        <button class="buttonlogout">LOG OUT</button>
+        <a href="../logout.php" class="buttonlogout">LOG OUT</a>
     </div>
+
 </div>
+
+
 

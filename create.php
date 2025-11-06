@@ -25,6 +25,8 @@
         </div>
     </div>
 
+    <!-- Formulario para crear un nuevo evento -->
+    <!-- action: indica a qué archivo PHP se envían los datos (createvalidate.php) -->
     <form action="php/createvalidate.php" method="post">
         <div class="event-box">
             <input type="text" placeholder="Title" name="title" id="title" required>
