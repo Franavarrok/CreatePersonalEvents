@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     require_once 'conexion.php';
 
     if(isset($_POST['submit'])){
@@ -21,6 +23,8 @@
         if($stmt_email -> num_rows > 0){
             $_SESSION['registro_error'] = "The email **" . htmlspecialchars($email) . "** it is already registered.";
             header("Location: ../register.php");
+            $stmt_email -> close();
+            $link -> close(); 
             exit();
         }
         $stmt_email->close();
@@ -29,11 +33,13 @@
         $stmt_doc = $link -> prepare("SELECT document FROM users WHERE document = ? LIMIT 1");
         $stmt_doc -> bind_param('i', $document);
         $stmt_doc -> execute();
-        $stmt_email -> store_result();
+        $stmt_doc -> store_result();
 
         if($stmt_doc -> num_rows > 0){
             $_SESSION['registro_error'] = "The document **" . htmlspecialchars($document) . "** it is already exists.";
             header("Location: ../register.php");
+            $stmt_doc -> close(); 
+            $link -> close();
             exit();
         }
         $stmt_doc -> close();
@@ -43,15 +49,16 @@
 
         if($sql->execute()){
             header("Location: ../login.php");
+            $sql -> close();
+            $link -> close(); 
             exit();
         }else{
             $_SESSION['registro_error'] = "Error registering user. Please try again. (" . $sql->error . ")";
             header("Location: ../register.php");
+            $sql -> close();
+            $link -> close(); 
             exit();
         }
-
-        $sql -> close();
-        $link -> close();
     } 
 
 ?>
