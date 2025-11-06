@@ -7,7 +7,7 @@
         $emailadmited = $_POST['email'];
         $passadmited = $_POST['pass'];
 
-        $stmt = $link -> prepare ("SELECT id, pass FROM users WHERE email = ? LIMIT 1");
+        $stmt = $link -> prepare ("SELECT document, pass FROM users WHERE email = ? LIMIT 1");
 
         if(!$stmt){
             $_SESSION['login_error'] = "Internal system error. Please try again later.";
@@ -33,7 +33,7 @@
         }
 
         if(password_verify($passadmited, $user['pass'])){
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_document'] = $user['document'];
             $_SESSION['user_email'] = $emailadmited;
 
             $stmt -> close();
