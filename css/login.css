@@ -27,6 +27,14 @@ body{
     color: #AB00CD;
 }
 
+.erroralert{
+    background-color: white;
+    color: black;
+    padding: 5px;
+    margin: 5px auto;
+    width: 80%;
+    max-width: 250px;
+}
 
 .boxlogin{
     background-color: white;

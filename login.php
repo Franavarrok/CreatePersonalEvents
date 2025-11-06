@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +21,21 @@
 
             <h2 class="title">Sign In</h2>
 
+            <?php
+                // Verifica si existe un mensaje de error de login en la sesión.
+                if (isset($_SESSION['login_error'])):
+            ?>
+
+            <div class="erroralert">
+                <p><?php echo $_SESSION['login_error']; ?></p>
+            </div>
+
+            <?php
+                // Una vez mostrado el error, lo borramos de la sesión.
+                unset($_SESSION['login_error']);
+                endif;
+            ?>
+
             <div class="input-container">
                 <img src="img/email-icon.png" alt="Gmail-Icon">
                 <input type="email" placeholder="Gmail" name="email" id="email" required> 
@@ -28,7 +45,7 @@
                 <input type="password" placeholder="Password" name="pass" id="pass" required>
             </div>
             <div class="button-container">
-                <button type="submit" class="buttonlogin">Login</button>
+                <button type="submit" class="buttonlogin" name="submit_login">Login</button>
             </div>
             <!-- Hipervinculo hacia el archivo register.php, en el caso de no tener cuenta. -->
             <div class="register-container">
