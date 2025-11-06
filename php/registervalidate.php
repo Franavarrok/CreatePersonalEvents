@@ -15,7 +15,7 @@
         $stmt_email = $link -> prepare("SELECT email FROM users WHERE email = ? LIMIT 1");
         $stmt_email -> bind_param('s', $email);
         $stmt_email -> execute();
-        $stmt_email -> storage_result();
+        $stmt_email -> store_result();
 
         //Condicion que nos redigira a nuestro archivo registro.php si colocan un correo existente.
         if($stmt_email -> num_rows > 0){
@@ -29,7 +29,7 @@
         $stmt_doc = $link -> prepare("SELECT document FROM users WHERE document = ? LIMIT 1");
         $stmt_doc -> bind_param('i', $document);
         $stmt_doc -> execute();
-        $stmt_email -> storage_result();
+        $stmt_email -> store_result();
 
         if($stmt_doc -> num_rows > 0){
             $_SESSION['registro_error'] = "The document **" . htmlspecialchars($document) . "** it is already exists.";
