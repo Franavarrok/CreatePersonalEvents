@@ -17,7 +17,7 @@
         if (isset($_SESSION['registro_error'])):
     ?>
 
-    <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; margin: 10px auto; width: 80%; max-width: 400px; border-radius: 5px; text-align: center;">
+    <div class="erroralert">
         <p><?php echo $_SESSION['registro_error']; ?></p>
     </div>
 
