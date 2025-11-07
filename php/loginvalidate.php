@@ -22,6 +22,22 @@ if(isset($_POST['submit_login'])){
     $result = $stmt -> get_result();
     $user = $result -> fetch_assoc();
 
+    if(!$user){
+    // ... (El bloque de error de email que ya tienes)
+    }
+
+    // 🛑 INICIO DE CÓDIGO DE DEPURACIÓN EXTREMA 🛑
+    echo "<h1>DEBUG EXTREMO - ELIMINAR DESPUÉS DE LA PRUEBA</h1>";
+    echo "<h2>1. Email BUSCADO (PHP):</h2> " . $emailadmited . "<br>";
+    echo "<h2>2. Contraseña PLANA INGRESADA:</h2> " . htmlspecialchars($passadmited) . "<br>";
+    echo "<h2>3. Hash RECUPERADO DE LA BD:</h2> " . $user['pass'] . "<br>";
+    if (password_verify($passadmited, $user['pass'])) {
+        echo "<h1 style='color:green;'>4. RESULTADO DE VERIFY: ¡EXITOSO! (El login debería funcionar)</h1>";
+    } else {
+        echo "<h1 style='color:red;'>4. RESULTADO DE VERIFY: ¡FALLIDO! (Aquí se rompe)</h1>";
+    }
+    exit();
+
     $error = "Incorrect email address or password.";
 
     // Verificar si el usuario fue encontrado (falla por email)
