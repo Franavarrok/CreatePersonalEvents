@@ -16,6 +16,8 @@
     padding: 10px;
     margin: 0px 30px 15px 30px;
     border-radius: 10px;
+    display: flex;
+    gap: 20px;
 
     .events{
         margin-right: 20%;
