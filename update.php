@@ -17,12 +17,10 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <title>Update Event</title>
 
-    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/update.css">
 </head>
 <body>
 
-    <?php include 'php/navbar.php'; ?>
 
     <form action="php/updatevalidate.php" method="post">
         <div class="main-container">
