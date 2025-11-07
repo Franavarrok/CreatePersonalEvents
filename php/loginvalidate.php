@@ -4,7 +4,7 @@
     require_once 'conexion.php';
 
     if(isset($_POST['submit_login'])){
-        $emailadmited = $_POST['email'];
+        $emailadmited = strtolower(trim($_POST['email']));
         $passadmited = $_POST['pass'];
 
         $stmt = $link -> prepare ("SELECT document, pass FROM users WHERE email = ? LIMIT 1");

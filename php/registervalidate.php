@@ -5,9 +5,9 @@
     require_once 'conexion.php';
 
     if(isset($_POST['submit'])){
-        $user = $_POST['user'];
-        $document = $_POST['document'];
-        $email = $_POST['email'];
+        $user = trim($_POST['user']);
+        $document = trim($_POST['document']);
+        $email = trim($_POST['email']);
         $pass = $_POST['pass'];
 
         //Proceso que nos ayuda a cifrar la contrasena.
