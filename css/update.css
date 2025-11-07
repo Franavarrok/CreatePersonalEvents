@@ -6,6 +6,8 @@
     gap: 10px;
     border: 2px solid #AB00CD;
     box-shadow: 0px 0px 20px #AB00CD;
+    margin: auto;
+    flex-direction: column;
 }
 
 .title{
