@@ -7,10 +7,11 @@
     </div> 
 
     <div class="button-container">
-        <a href="logout.php" class="buttonlogout">LOG OUT</a>
+        <button id="logoutButton" class="buttonlogout">LOG OUT</button>
     </div>
-
 </div>
+
+<script src="../logout.js"></script>
 
 
 
