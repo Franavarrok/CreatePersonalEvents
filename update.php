@@ -30,7 +30,6 @@ if (isset($_GET['id'])) {
                         <th>Title</th>
                         <th>Description</th>
                         <th>Date</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,10 +49,10 @@ if (isset($_GET['id'])) {
                                 </form>
                             </td>
                         </tr>
-                </tbody>
+                </tbody>    
             </table>
+            <?php endif; ?>
         </div>
     </form>
-
 </body>
 </html>
