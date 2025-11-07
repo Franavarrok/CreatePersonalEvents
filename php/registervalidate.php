@@ -13,7 +13,8 @@
         $pass = $_POST['pass'];
 
         // Cifrado de la contrasena utilizando password_hash.
-        $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+        //$pass_hash = password_hash($pass, PASSWORD_DEFAULT);   (No funciona por incompatibilidad con XAMPP.)
+        $pass_hash = $pass;
 
         // Verificamos si hay un Email existente en la base de datos.
         $stmt_email = $link -> prepare("SELECT email FROM users WHERE email = ? LIMIT 1");
@@ -64,7 +65,7 @@
             header("Location: ../register.php");
             exit();
         }
-        
+
     }
 
     // Nos redirecciona por acceso directo.
