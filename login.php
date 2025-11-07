@@ -21,6 +21,21 @@
 
             <h2 class="title">Sign In</h2>
 
+            <?php
+                // Verifica si existe un mensaje de error de login en la sesión.
+                if (isset($_SESSION['login_error'])):
+            ?>
+
+            <div class="erroralert">
+                <p><?php echo $_SESSION['login_error']; ?></p>
+            </div>
+
+            <?php
+                // Una vez mostrado el error, lo borramos de la sesión.
+                unset($_SESSION['login_error']);
+                endif;
+            ?>
+
             <div class="input-container">
                 <img src="img/email-icon.png" alt="Gmail-Icon">
                 <input type="email" placeholder="Gmail" name="email" id="email" required> 

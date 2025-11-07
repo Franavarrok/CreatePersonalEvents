@@ -20,6 +20,21 @@
         <div class="boxregister"> 
 
             <h2 class="title">Register</h2>
+
+            <?php
+                // Verifica si existe un mensaje de error en la sesión.
+                if (isset($_SESSION['registro_error'])):
+            ?>
+
+            <div class="erroralert">
+                <p><?php echo $_SESSION['registro_error']; ?></p>
+            </div>
+
+            <?php
+                // Una vez mostrado el error, lo borramos de la sesión para que no se muestre al recargar.
+                unset($_SESSION['registro_error']);
+                endif;
+            ?>
             
             <div class="input-container">
                 <img src="img/person-icon.png" alt="User-Icon">
