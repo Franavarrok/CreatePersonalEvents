@@ -1,5 +1,6 @@
 <?php
-require_once 'php/conexion.php';
+require_once 'conexion.php';
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = $link->prepare("SELECT * FROM events WHERE id = ?");
@@ -15,46 +16,16 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <title>Update Event</title>
-
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/update.css">
 </head>
 <body>
+    <h2>Update Event</h2>
 
     <form action="php/updatevalidate.php" method="post">
-        <div class="main-container">
-            <?php if ($result && $result->num_rows > 0): ?>
-            <table class="events-table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while($row = $result->fetch_assoc()): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($row['title']) ?></td>
-                            <td><?= htmlspecialchars($row['description']) ?></td>
-                            <td><?= htmlspecialchars($row['date']) ?></td>
-                            <td class="action-buttons">
-                                <form action="update.php" method="get" style="display:inline-block;">
-                                    <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                    <button type="submit" class="button-update" name="submit">UPDATE</button>
-                                </form>
-                                <form action="delete.php" method="post" style="display:inline-block;">
-                                    <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                    <button type="submit" class="button-delete" name="delete">DELETE</button>
-                                </form>
-                            </td>
-                        </tr>
-                </tbody>    
-            </table>
-            <?php else: ?>
-                <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
-            <?php endif;?>
-        </div>
+        <input type="hidden" name="id" value="<?= $event['id'] ?>">
+        <input type="text" name="title" value="<?= htmlspecialchars($event['title']) ?>" required><br>
+        <input type="text" name="description" value="<?= htmlspecialchars($event['description']) ?>" required><br>
+        <input type="date" name="date" value="<?= htmlspecialchars($event['date']) ?>" required><br>
+        <button type="submit" name="submit">Save Changes</button>
     </form>
 </body>
 </html>
