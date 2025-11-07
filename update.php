@@ -43,11 +43,11 @@ if (isset($_GET['id'])) {
                             <td class="action-buttons">
                                 <form action="php/update.php" method="get" style="display:inline-block;">
                                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                    <button type="submit" class="button-update" name="submit">UPDATE</button>
+                                    <button type="submit" class="button-update">UPDATE</button>
                                 </form>
                                 <form action="php/delete.php" method="post" style="display:inline-block;">
                                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                    <button type="submit" class="button-delete" name="delete">DELETE</button>
+                                    <button type="submit" class="button-delete">DELETE</button>
                                 </form>
                             </td>
                         </tr>

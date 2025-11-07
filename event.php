@@ -47,11 +47,11 @@
                     <div class="button-type">
                         <form action="update.php" method="get">
                             <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                            <button type="submit" class="button-update">UPDATE</button>
+                            <button type="submit" class="button-update" name="submit">UPDATE</button>
                         </form>
                         <form action="delete.php" method="post">
                             <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                            <button type="submit" class="button-delete">DELETE</button>
+                            <button type="submit" class="button-delete" name="delete">DELETE</button>
                         </form>
                     </div>
 
