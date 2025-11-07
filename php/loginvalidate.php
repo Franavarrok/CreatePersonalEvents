@@ -19,7 +19,7 @@
         }
 
         $sql -> bind_param('s', $email);
-        $sql = execute();
+        $sql -> execute();
 
         $error = "Incorrect email address or password.";
 
