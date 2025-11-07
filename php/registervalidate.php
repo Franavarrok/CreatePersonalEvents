@@ -11,8 +11,9 @@
         $pass = $_POST['pass'];
 
         //Proceso que nos ayuda a cifrar la contrasena.
-        $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
-
+        //$pass_hash = password_hash($pass, PASSWORD_DEFAULT);
+        $pass_hash = $pass;
+        
         //Verificar si el Email ya existe en la base de datos.
         $stmt_email = $link -> prepare("SELECT email FROM users WHERE email = ? LIMIT 1");
         $stmt_email -> bind_param('s', $email);
