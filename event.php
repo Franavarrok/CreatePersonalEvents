@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event</title>
+    <title>My Events</title>
 
-    <!-- Vinculamos todos los archivos necesarios. -->
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/event.css">
 </head>
 <body>
 
-    <!-- Incluimos nuestro archivo navbar.php, que contiene toda la estructura del nav en HTML. -->
     <?php include 'php/navbar.php'; ?>
 
     <?php
@@ -47,11 +45,11 @@
                     <div class="button-type">
                         <form action="update.php" method="get">
                             <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                            <button type="submit" class="button-update" name="submit">UPDATE</button>
+                            <button type="submit" class="button-update">UPDATE</button>
                         </form>
                         <form action="delete.php" method="post">
                             <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                            <button type="submit" class="button-delete" name="delete">DELETE</button>
+                            <button type="submit" class="button-delete">DELETE</button>
                         </form>
                     </div>
 
