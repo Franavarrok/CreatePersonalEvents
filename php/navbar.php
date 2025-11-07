@@ -7,7 +7,7 @@
     </div> 
 
     <div class="button-container">
-        <a href="../logout.php" class="buttonlogout">LOG OUT</a>
+        <a href="logout.php" class="buttonlogout">LOG OUT</a>
     </div>
 </div>
 
