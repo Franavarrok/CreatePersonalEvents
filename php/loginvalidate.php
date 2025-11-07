@@ -2,14 +2,14 @@
     session_start();
     require_once 'conexion.php';
 
-    if (isset($_POST['submit_login'])){
-        
+    if(isset($_POST['submit_login'])){
+    
         // Estandarización del email.
         $email = strtolower(trim($_POST['email']));
-        $pass = $_POST['pass']; // Contraseña plana ingresada
+        $pass = $_POST['pass']; 
 
-        // Sentencia SQL que verifica email Y contraseña.
-        $sql = $link -> prepare ("SELECT document, pass FROM users WHERE email = ? AND pass = ? LIMIT 1");
+        // Sentencia SQL para buscar el usuario por email y obtener el hash.
+        $sql = $link -> prepare ("SELECT document, pass FROM users WHERE email = ? LIMIT 1");
 
         if(!$sql){
             $_SESSION['login_error'] = "Internal system error. Failed to prepare query.";
@@ -17,8 +17,7 @@
             exit();
         }
 
-        // Vinculamos los dos parámetros (email Y contraseña).
-        $sql -> bind_param('ss', $email, $pass); 
+        $sql -> bind_param('s', $email);
         $sql -> execute();
         
         $result = $sql -> get_result();
@@ -26,11 +25,22 @@
 
         $error = "Incorrect email address or password.";
 
-        // Verificamos el resultado: Si $user existe, el login es exitoso.
-        if($user){ 
+        // Verificamos si el usuario fue encontrado.
+        if(!$user){
+            $_SESSION['login_error'] = $error;
+            $sql -> close();
+            $link -> close();
+            header("Location: ../login.php");
+            exit();
+        }
+    
+        // Verificamos la contraseña utilizando password_verify.
+        if(password_verify($pass, $user['pass'])){
             // Login Exitoso
             $_SESSION['user_document'] = $user['document'];
-            $_SESSION['user_email'] = $email;
+            
+            // ¡Usamos la variable de sesión que se debe verificar!
+            $_SESSION['user_email'] = $email; 
 
             $sql -> close();
             $link -> close();
@@ -38,9 +48,8 @@
             exit();
 
         }else{
-            // Email O Contraseña incorrectos
+            // Si la contrasena es incorrecta.
             $_SESSION['login_error'] = $error;
-
             $sql -> close();
             $link -> close();
             header("Location: ../login.php");
