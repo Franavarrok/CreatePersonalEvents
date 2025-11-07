@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
                 <input type="text" name="title" value="<?= htmlspecialchars($event['title']) ?>" required><br>
                 <input type="text" name="description" value="<?= htmlspecialchars($event['description']) ?>" required><br>
                 <input type="date" name="date" value="<?= htmlspecialchars($event['date']) ?>" required><br>
-                <button type="submit" name="submit" class="savebutton">Save Changes</button>
+                <button type="submit" name="submit" class="savebutton">SAVE</button>
             </div>
         </div>
     </form>
