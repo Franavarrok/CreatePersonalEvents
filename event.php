@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
+    <title>Event</title>
 
     <!-- Vinculamos todos los archivos necesarios. -->
     <link rel="stylesheet" href="css/navbar.css">
@@ -22,39 +22,42 @@
     $result = $link->query($sql);
     ?>
 
-    
     <div class="first-container">
         <h2 class="title-event">My Events</h2>
     </div>
 
-<div class="main-container">
-    <?php if ($result && $result->num_rows > 0): ?>
-        <?php while($row = $result->fetch_assoc()): ?>
-            <div class="events">
-                <div class="title">
-                    <strong>Title:</strong> <?= htmlspecialchars($row['title']) ?>
+    <div class="main-container">
+        <?php if ($result && $result->num_rows > 0): ?>
+            <?php while($row = $result->fetch_assoc()): ?>
+                <div class="events">
+                    <div class="title">
+                        <strong>Title:</strong> <?= htmlspecialchars($row['title']) ?>
+                    </div>
+                    <div class="description">
+                        <strong>Description:</strong> <?= htmlspecialchars($row['description']) ?>
+                    </div>
+                    <div class="date">
+                        <strong>Date:</strong> <?= htmlspecialchars($row['date']) ?>
+                    </div>
                 </div>
-                <div class="description">
-                    <strong>Description:</strong> <?= htmlspecialchars($row['description']) ?>
-                </div>
-                <div class="date">
-                    <strong>Date:</strong> <?= htmlspecialchars($row['date']) ?>
-                </div>
-            </div>
 
-            <div class="button-type">
-                <div>
-                    <button class="button-update">UPDATE</button>
+                <!-- Botones con formularios -->
+                <div class="button-type">
+                    <form action="php/update.php" method="get">
+                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                        <button type="submit" class="button-update">UPDATE</button>
+                    </form>
+                    <form action="php/delete.php" method="post">
+                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                        <button type="submit" class="button-delete">DELETE</button>
+                    </form>
                 </div>
-                <div>
-                    <button class="button-delete">DELETE</button>
-                </div>
-            </div>
-        <?php endwhile; ?>
-    <?php else: ?>
-        <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
-    <?php endif; ?>
-</div>
+
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
+        <?php endif; ?>
+    </div>
 
 </body>
 </html>
