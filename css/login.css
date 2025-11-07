@@ -29,8 +29,8 @@ body{
 
 .erroralert{
     color: black;
-    text-shadow: 0px 0px 3px #AB00CD;
-    font-size: 13px;
+    text-shadow: 0px 0px 20px #AB00CD;
+    font-size: 10px;
     padding: 5px;
     margin: 5px auto;
     width: 80%;
