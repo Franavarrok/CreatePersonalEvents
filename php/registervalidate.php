@@ -7,7 +7,7 @@
     if(isset($_POST['submit'])){
         $user = trim($_POST['user']);
         $document = trim($_POST['document']);
-        $email = trim($_POST['email']);
+        $email = strtolower(trim($_POST['email']));
         $pass = $_POST['pass'];
 
         //Proceso que nos ayuda a cifrar la contrasena.

@@ -12,7 +12,7 @@ if(isset($_POST['submit_login'])){
     if(!$stmt){
         $_SESSION['login_error'] = "Internal system error. Please try again later.";
         header("Location: ../login.php");
-        // Nota: No se puede cerrar $link si $stmt falló en la preparación
+        // No se puede cerrar $link si $stmt falló en la preparación
         exit();
     }
 
@@ -24,7 +24,7 @@ if(isset($_POST['submit_login'])){
 
     $error = "Incorrect email address or password.";
 
-    // 1. Verificar si el usuario fue encontrado (falla por email)
+    // Verificar si el usuario fue encontrado (falla por email)
     if(!$user){
         $_SESSION['login_error'] = $error;
 
@@ -34,7 +34,7 @@ if(isset($_POST['submit_login'])){
         exit();
     }
     
-    // 2. Verificar la contraseña
+    // Verificar la contraseña
     if(password_verify($passadmited, $user['pass'])){
         // Login Exitoso
         $_SESSION['user_document'] = $user['document'];
