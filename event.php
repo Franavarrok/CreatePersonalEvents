@@ -43,11 +43,11 @@
 
                 <!-- Botones con formularios -->
                 <div class="button-type">
-                    <form action="php/update.php" method="get">
+                    <form action="update.php" method="get">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <button type="submit" class="button-update">UPDATE</button>
                     </form>
-                    <form action="php/delete.php" method="post">
+                    <form action="delete.php" method="post">
                         <input type="hidden" name="id" value="<?= $row['id'] ?>">
                         <button type="submit" class="button-delete">DELETE</button>
                     </form>
