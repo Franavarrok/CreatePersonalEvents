@@ -1,61 +1,61 @@
 <?php 
+session_start();
+require_once 'conexion.php';
 
-    session_start();
-    require_once 'conexion.php';
+if(isset($_POST['submit_login'])){
+    $emailadmited = strtolower(trim($_POST['email']));
+    $passadmited = $_POST['pass'];
 
-    if(isset($_POST['submit_login'])){
-        $emailadmited = strtolower(trim($_POST['email']));
-        $passadmited = $_POST['pass'];
+    // Sentencia preparada para buscar el usuario por email
+    $stmt = $link -> prepare ("SELECT document, pass FROM users WHERE email = ? LIMIT 1");
 
-        $stmt = $link -> prepare ("SELECT document, pass FROM users WHERE email = ? LIMIT 1");
+    if(!$stmt){
+        $_SESSION['login_error'] = "Internal system error. Please try again later.";
+        header("Location: ../login.php");
+        // Nota: No se puede cerrar $link si $stmt falló en la preparación
+        exit();
+    }
 
-        if(!$stmt){
-            $_SESSION['login_error'] = "Internal system error. Please try again later.";
-            header("Location: ../login.php");
-            exit();
-        }
+    $stmt -> bind_param('s', $emailadmited);
+    $stmt -> execute();
+    
+    $result = $stmt -> get_result();
+    $user = $result -> fetch_assoc();
 
-        $stmt -> bind_param('s', $emailadmited);
-        $stmt -> execute();
-        
-        $result = $stmt -> get_result();
-        $user = $result -> fetch_assoc();
+    $error = "Incorrect email address or password.";
 
-        $error = "Incorrect email address or password.";
-
-        if(!$user){
-            $_SESSION['login_error'] = $error;
-
-            $stmt -> close();
-            $link -> close();
-            header("Location: ../login.php");
-            exit();
-        }
-
-        if(password_verify($passadmited, $user['pass'])){
-            $_SESSION['user_document'] = $user['document'];
-            $_SESSION['user_email'] = $emailadmited;
-
-            $stmt -> close();
-            $link -> close();
-            header("Location: ../index.php");
-            exit();
-
-        }else{
-            $_SESSION['login_error'] = $error;
-
-            $stmt -> close();
-            $link -> close();
-            header("Location: ../login.php");
-            exit();
-        }
+    // 1. Verificar si el usuario fue encontrado (falla por email)
+    if(!$user){
+        $_SESSION['login_error'] = $error;
 
         $stmt -> close();
         $link -> close();
-
+        header("Location: ../login.php");
+        exit();
     }
+    
+    // 2. Verificar la contraseña
+    if(password_verify($passadmited, $user['pass'])){
+        // Login Exitoso
+        $_SESSION['user_document'] = $user['document'];
+        $_SESSION['user_email'] = $emailadmited;
 
-    header("Location: ../login.php");
-    exit();
+        $stmt -> close();
+        $link -> close();
+        header("Location: ../index.php");
+        exit();
 
+    }else{
+        // Contraseña incorrecta
+        $_SESSION['login_error'] = $error;
+
+        $stmt -> close();
+        $link -> close();
+        header("Location: ../login.php");
+        exit();
+    }
+}
+
+header("Location: ../login.php");
+exit();
 ?>
