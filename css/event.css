@@ -64,9 +64,11 @@
     color: black;
     display: flex;
     border: 1px solid black;
+    border-radius: 5px;
     box-shadow: 0px 0px 15px black;
-    padding: 15px;
-    font-size: 10px;
+    padding: 20px;
+    font-size: 15px;
+    margin-right: 20px;
 }
 
 .button-delete{
@@ -74,9 +76,11 @@
     color: black;
     display: flex;
     border: 1px solid black;
+    border-radius: 5px;
     box-shadow: 0px 0px 15px black;
-    padding: 15px;
-    font-size: 10px;
+    padding: 20px;
+    font-size: 15px;
+    margin-right: 20px;
 }
 
 /* AJUSTE DE ESTILOS DE TUS CAMPOS */
