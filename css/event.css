@@ -19,6 +19,10 @@
     overflow-x: auto;
 }
 
+.events{
+    margin-right: 70%;
+}
+
 /* Tabla de eventos */
 .events-table {
     width: 100%;
@@ -48,6 +52,10 @@
 .action-buttons {
     display: flex;
     gap: 10px;
+}
+
+.button-type{
+    margin-left: 30%;
 }
 
 /* Botones */
