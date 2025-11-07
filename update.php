@@ -51,7 +51,9 @@ if (isset($_GET['id'])) {
                         </tr>
                 </tbody>    
             </table>
-            <?php endif; ?>
+            <?php else: ?>
+                <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
+            <?php endif;?>
         </div>
     </form>
 </body>
