@@ -16,9 +16,13 @@
         $sql -> bind_param('sss', $title, $description, $date);
 
         if($sql->execute()){
-            echo "You registered successfully";
-        } else{
+            header("Location: ../event.php");
+            exit();
+
+        } else {
             echo "Error: " . $sql->error;
+            header("Location: ../create.php");
+            exit();
         }
 
         $sql->close();
