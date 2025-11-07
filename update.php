@@ -50,12 +50,8 @@ if (isset($_GET['id'])) {
                                 </form>
                             </td>
                         </tr>
-                    <?php endwhile; ?>
                 </tbody>
             </table>
-            <?php else: ?>
-                <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
-            <?php endif; ?>
         </div>
     </form>
 
