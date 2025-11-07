@@ -50,17 +50,16 @@
     gap: 10px; 
 }
 
-/* Botones y alineación a la derecha */
 .button-type{
+    background-color: white;
     display: flex;
-    gap: 10px; /* Reducimos la separación vertical entre botones */
+    gap: 10px; 
     flex-direction: column;
-    
-    /* CLAVE: Alinea los botones a la derecha del contenedor */
     align-items: flex-end; 
-    
-    /* MARGEN: Separación entre los botones y el texto del evento */
+    justify-content: center;
     margin-left: 20px; 
+    border: 1px solid #AB00CD;
+    box-shadow: 0px 0px 15px #AB00CD;
 }
 
 /* AJUSTE DE ESTILOS DE TUS CAMPOS */
