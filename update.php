@@ -1,6 +1,5 @@
 <?php
-require_once 'conexion.php';
-
+require_once 'php/conexion.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = $link->prepare("SELECT * FROM events WHERE id = ?");
