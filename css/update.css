@@ -1,0 +1,38 @@
+.main-container{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    border: 2px solid #AB00CD;
+    box-shadow: 0px 0px 20px #AB00CD;
+}
+
+.title{
+    color: #AB00CD;
+    font-size: 30px;
+    text-align: center;
+    margin: 5px auto;
+    margin-bottom: 10px;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+input{
+    border: 2px solid #AB00CD;
+    padding: 5px;
+}
+
+.savebutton button{
+    background-color: #00CD59;
+    color: white;
+    font-size: 17px;
+    padding: 10px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 15px white;
+}
