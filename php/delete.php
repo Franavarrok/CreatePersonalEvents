@@ -12,8 +12,10 @@ if (isset($_POST['id'])) {
         exit();
     } else {
         echo "Error al eliminar el evento.";
+        header("Location: ../event.php");
+        exit();
     }
-} else {
-    echo "No se recibió el ID del evento.";
-}
+
+} 
+
 ?>
