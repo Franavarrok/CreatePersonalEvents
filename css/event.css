@@ -22,7 +22,7 @@
 .events{
     display: flex;
     color: white;
-    flex-direction: row;
+    flex-direction: row-reverse;
     margin: 10px auto;
     
     .title{
@@ -38,13 +38,14 @@
     .date{
         background-color: #AB00CD;
         border: 2px solid #AB00CD;
+        border-radius: 10px;
     }
 }
 
-.action-buttons {
+.button-type{
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    flex-direction: column;
 }
 
 /* Botones */
