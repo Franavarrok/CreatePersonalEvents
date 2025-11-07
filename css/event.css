@@ -22,17 +22,21 @@
 .events{
     display: flex;
     color: white;
-    flex-direction: row-reverse;
-    margin: 10px auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    overflow: hidden;
     
     .title{
         background-color: #AB00CD;
         border: 2px solid #AB00CD;
+        border-radius: 10px;
     }
 
     .description{
         background-color: #AB00CD;
         border: 2px solid #AB00CD;
+        border-radius: 10px;
     }
 
     .date{
