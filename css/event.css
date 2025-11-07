@@ -1,86 +1,64 @@
-.first-container {
-    background-color: #AB00CD;
-    padding: 10px;
-    margin: 15px 30px;
-    border-radius: 10px;
-}
-
-.title-event {
-    color: white;
-    font-size: 30px;
-    margin-left: 20px;
-}
-
 .main-container {
     background-color: white;
-    margin: 15px 15px 15px 15px;
-    padding: 20px;
-    border-radius: 10px;
-    overflow-x: auto;
-}
-
-.events{
-    display: flex;
-    color: white;
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    overflow: hidden;
+    /* ELIMINAR: Esto hacía que todos los eventos se pusieran en una fila */
+    /* display: flex; 
+    justify-content: space-between; */
     
-    .title{
-        background-color: #AB00CD;
-        border: 2px solid #AB00CD;
-        border-radius: 10px;
-    }
-
-    .description{
-        background-color: #AB00CD;
-        border: 2px solid #AB00CD;
-        border-radius: 10px;
-    }
-
-    .date{
-        background-color: #AB00CD;
-        border: 2px solid #AB00CD;
-        border-radius: 10px;
-    }
+    /* MANTENER: Estilos de contenedor general */
+    margin: 15px 15px 15px 15px; /* Ajustado de tu código */
+    padding: 20px; /* Ajustado de tu código */
+    border-radius: 10px;
 }
 
+
+/* CLASE NUEVA Y CLAVE: Estilo para cada tarjeta de evento */
+.event-card {
+    background-color: #AB00CD;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    
+    /* 1. SEPARACIÓN: Añade espacio entre esta tarjeta y la siguiente */
+    margin-bottom: 20px; 
+
+    /* 2. ALINEACIÓN: Alinea el contenido (izquierda) y botones (derecha) */
+    display: flex;
+    justify-content: space-between; /* Empuja el contenido a un lado y botones al otro */
+}
+
+/* CONTENIDO DEL EVENTO (Título, Descripción, Fecha) */
+.events {
+    /* Tu clase .events ahora contiene solo Título, Descripción y Fecha */
+    width: 75%; /* Le da espacio a los botones */
+    
+    /* Mantiene los elementos uno debajo del otro */
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+/* Botones y alineación a la derecha */
 .button-type{
     display: flex;
-    gap: 20px;
+    gap: 10px; /* Reducimos la separación vertical entre botones */
     flex-direction: column;
+    
+    /* CLAVE: Alinea los botones a la derecha del contenedor */
+    align-items: flex-end; 
+    
+    /* MARGEN: Separación entre los botones y el texto del evento */
+    margin-left: 20px; 
 }
 
-/* Botones */
-.button-update {
-    background-color: #00CD59;
+/* AJUSTE DE ESTILOS DE TUS CAMPOS */
+.events .title, 
+.events .description, 
+.events .date {
+    background-color: #AB00CD;
     color: white;
-    border: none;
+    /* Ajusta el padding para que el contenido no quede pegado al borde */
+    padding: 8px 15px; 
     border-radius: 10px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0px 0px 8px #00CD59;
-    transition: 0.3s;
-}
-
-.button-update:hover {
-    background-color: #00A748;
-}
-
-.button-delete {
-    background-color: #CD0003;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0px 0px 8px #CD0003;
-    transition: 0.3s;
-}
-
-.button-delete:hover {
-    background-color: #9E0002;
+    /* IMPORTANTE: Eliminar el borde que estaba duplicando el color */
+    border: none; 
 }

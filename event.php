@@ -29,31 +29,34 @@
     <div class="main-container">
         <?php if ($result && $result->num_rows > 0): ?>
             <?php while($row = $result->fetch_assoc()): ?>
-                <div class="events">
-                    <div class="title">
-                        <strong>Title:</strong> <?= htmlspecialchars($row['title']) ?>
-                    </div>
-                    <div class="description">
-                        <strong>Description:</strong> <?= htmlspecialchars($row['description']) ?>
-                    </div>
-                    <div class="date">
-                        <strong>Date:</strong> <?= htmlspecialchars($row['date']) ?>
-                    </div>
-                </div>
+                
+                <div class="event-card"> 
 
-                <!-- Botones con formularios -->
-                <div class="button-type">
-                    <form action="update.php" method="get">
-                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                        <button type="submit" class="button-update">UPDATE</button>
-                    </form>
-                    <form action="delete.php" method="post">
-                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                        <button type="submit" class="button-delete">DELETE</button>
-                    </form>
-                </div>
+                    <div class="events">
+                        <div class="title">
+                            <strong>Title:</strong> <?= htmlspecialchars($row['title']) ?>
+                        </div>
+                        <div class="description">
+                            <strong>Description:</strong> <?= htmlspecialchars($row['description']) ?>
+                        </div>
+                        <div class="date">
+                            <strong>Date:</strong> <?= htmlspecialchars($row['date']) ?>
+                        </div>
+                    </div>
 
-            <?php endwhile; ?>
+                    <div class="button-type">
+                        <form action="update.php" method="get">
+                            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                            <button type="submit" class="button-update">UPDATE</button>
+                        </form>
+                        <form action="delete.php" method="post">
+                            <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                            <button type="submit" class="button-delete">DELETE</button>
+                        </form>
+                    </div>
+
+                </div> 
+                <?php endwhile; ?>
         <?php else: ?>
             <p style="color:white; text-align:center;">No hay eventos guardados aún.</p>
         <?php endif; ?>
