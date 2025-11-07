@@ -12,6 +12,11 @@
 
     <?php include 'php/navbar.php'; ?>
 
+    <?php if (isset($_GET['deleted'])): ?>
+    <p style="color: lime; text-align: center;"> Evento eliminado correctamente</p>
+    <?php endif; ?>
+
+
     <?php
     require_once 'php/conexion.php';
 

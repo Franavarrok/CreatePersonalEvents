@@ -1,29 +1,34 @@
 <?php
+// Conectamos con la base de datos
 require_once 'php/conexion.php';
 
+// Si se recibió el formulario con el id del evento
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id'])) {
+    // Guardamos el id del evento a borrar
     $id = $_POST['id'];
 
-    // Prepara y ejecuta la eliminación
-    $sql = $link->prepare("DELETE FROM events WHERE id = ?");
-    $sql->bind_param("i", $id);
+    // Preparamos la consulta para borrar el evento
+    $sql = "DELETE FROM events WHERE id = ?";
+    $stmt = $link->prepare($sql);
+    $stmt->bind_param("i", $id);
 
-    if ($sql->execute()) {
-        // Redirige si se elimina correctamente
-        header("Location: ../event.php");
+    // Ejecutamos
+    if ($stmt->execute()) {
+        // Si se borra bien, volver a la página de eventos
+        header("Location: event.php?deleted=1");
         exit();
     } else {
-        // Redirige si falla
-        header("Location: ../event.php?error=delete_failed");
-        exit();
+        echo "❌ Error al eliminar el evento.";
     }
 
-    $sql->close();
-    $link->close();
+    // Cerramos la consulta
+    $stmt->close();
+
 } else {
-    // Si acceden sin POST, redirige igual
-    header("Location: ../event.php");
-    exit();
+    echo "❌ No se recibió ningún evento para borrar.";
 }
+
+// Cerramos la conexión
+$link->close();
 ?>
